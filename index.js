@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // Route pour récupérer la valeur du compteur
-app.post('/value', async (req, res) => {
+app.get('/value', async (req, res) => {
   try {
     let compteur = await database.Compteur.findOne({ nom: 'compteur_principal' });
     
