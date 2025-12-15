@@ -1,0 +1,20 @@
+{
+  "name": "examen_docker_s9",
+  "version": "1.0.0",
+  "description": "Docker Exam M2TNSID INSA S9",
+  "homepage": "https://github.com/samTeouri/examen_docker_S9#readme",
+  "bugs": {
+    "url": "https://github.com/samTeouri/examen_docker_S9/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samTeouri/examen_docker_S9.git"
+  },
+  "license": "ISC",
+  "author": "Samrou TEOURI",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
