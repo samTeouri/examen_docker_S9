@@ -4,7 +4,7 @@
 **Date :** 15 Décembre 2025
 
 ## Description du projet
-Ce projet est une application Node.js conteneurisée avec Docker, utilisant MongoDB comme base de données.
+Ce projet est une application ExpressJS conteneurisée avec Docker, utilisant MongoDB comme base de données. Il consiste en un compteur dont la valeur est stockée dans une table *Compteur* sur MongoDB.
 
 ## Installation
 
@@ -31,7 +31,7 @@ docker-compose up --build
 
 - `Dockerfile` : Configuration pour construire l'image de l'application Node.js
 - `docker-compose.yml` : Configuration pour l'orchestration des conteneurs (application + MongoDB)
-- `public/` : Contient les fichiers statiques (HTML, CSS, JS)
+- `public/` : Contient le fichier statique index.html
 - `package.json` : Dépendances et scripts du projet Node.js
 
 ## Fonctionnalités

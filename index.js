@@ -16,6 +16,24 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from the "public" directory
 app.use(express.static('public'));
 
+// Route pour récupérer la valeur du compteur
+app.post('/value', async (req, res) => {
+  try {
+    let compteur = await database.Compteur.findOne({ nom: 'compteur_principal' });
+    
+    // Si le compteur n'existe pas, le créer
+    if (!compteur) {
+      compteur = new database.Compteur({ nom: 'compteur_principal', valeur: 0 });
+      await compteur.save();
+    }
+    
+    res.json({ valeur: compteur.valeur });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erreur lors de la récupération de la valeur' });
+  }
+});
+
 // Route pour incrémenter le compteur
 app.post('/plus', async (req, res) => {
   try {

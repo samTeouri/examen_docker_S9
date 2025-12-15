@@ -78,6 +78,17 @@
         const btnPlus = document.getElementById('btnPlus');
         const btnMoins = document.getElementById('btnMoins');
 
+        // Charger la valeur initiale du compteur
+        async function chargerCompteur() {
+            try {
+                const response = await fetch('/value');
+                const data = await response.json();
+                compteurElement.textContent = data.valeur;
+            } catch (error) {
+                console.error('Erreur:', error);
+            }
+        }
+
         // Incrémenter le compteur
         btnPlus.addEventListener('click', async () => {
             try {
@@ -111,6 +122,9 @@
                 console.error('Erreur:', error);
             }
         });
+
+        // Charger la valeur initiale au chargement de la page
+        chargerCompteur();
     </script>
 </body>
 </html>
