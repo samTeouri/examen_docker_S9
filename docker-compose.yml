@@ -21,6 +21,7 @@ services:
       start_period: 10s
 
   app:
+    image: samteouri/examen_docker_s9_app:latest
     build:
       context: .
       dockerfile: Dockerfile
